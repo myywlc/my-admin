@@ -3,7 +3,7 @@ import './index.less';
 
 class JobBar extends React.Component {
   state = {
-    top: 0,
+    location: 0,
   };
 
   componentDidMount() {
@@ -15,56 +15,60 @@ class JobBar extends React.Component {
   }
 
   roll = () => {
-    let { top } = this.state;
+    let { location } = this.state;
     const { dataList = [] } = this.props;
+    const len = -(dataList.length - 5) * 50;
 
     this.timer && clearInterval(this.timer);
     this.timer = setInterval(() => {
-      top--;
-
-      if (top === dataList.length * 50 * (-1)) {
-        top = 0;
+      location -= 1;
+      if (location === len) {
+        location = 0;
       }
       this.setState({
-        top,
+        location,
       });
     }, 60);
   };
 
-  handleEnter = () => {
+  handleMouseEnter = () => {
     clearInterval(this.timer);
   };
 
-  handleLeave = () => {
+  handleMouseLeave = () => {
     this.roll();
   };
 
+  handleClickMore = () => {
+    window.location.href = 'https://job.alibaba.com/zhaopin/positionList.html?';
+  };
+
   render() {
-    const { top } = this.state;
+    const { location } = this.state;
     const { dataList = [] } = this.props;
-    const styleConfig = {
-      transform: `translateY(${top}px)`,
+    const styleTop = {
+      top: location,
     };
 
     return (
-      <div className='job_box'>
-        <div className='title'>
-          <span>最新职位</span>
-          <span className='job-more'>更多</span>
+      <div className='job-con'>
+        <div className='job-header'>
+          <span className='job-new'>最新职位</span>
+          <span className='job-more' onClick={this.handleClickMore}>更多</span>
         </div>
-        <div className='content' style={styleConfig}>
+        <ul className='job-space' style={styleTop}>
           {
-            dataList.map((item) => {
-              return <div key={item.id} onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} onClick={() => {
-                this.handleClick(item);
-              }} className='item'>
-                <div className='item1'>{item.jobName}</div>
-                <div className='item2'>{item.site}</div>
-                <div className='item3'>{item.time}</div>
-              </div>;
-            })
+            dataList.map(item => (
+              <li className='job-item' key={item.id}
+                  onMouseEnter={this.handleMouseEnter}
+                  onMouseLeave={this.handleMouseLeave}>
+                <a href={item.link} className='jobName'>{item.jobName}</a>
+                <span className='site'>{item.site}</span>
+                <span className='time'>{item.time}</span>
+              </li>
+            ))
           }
-        </div>
+        </ul>
       </div>
     );
   }

@@ -1,55 +1,56 @@
-.job_box {
+.job-con {
+  position: relative;
   width: 100%;
   height: 100%;
-  background: #FFFFFF;
-  box-shadow: 0 0 15px 0 rgba(31, 56, 88, 0.08);
   border-radius: 3px;
   float: left;
   overflow: hidden;
-  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0 0 15px 0 rgba(31, 56, 88, 0.08);
 
-  .title {
+  .job-header {
+    position: relative;
     height: 49px;
-    border-bottom: 1px solid rgba(31, 56, 88, 0.06);
-    line-height: 49px;
     padding: 0 14px;
-    /* opacity   : 0.8; */
     background: white;
     font-size: 14px;
+    line-height: 49px;
     color: #000000;
-    position: relative;
+    border-bottom: 1px solid rgba(31, 56, 88, 0.06);
     z-index: 2;
+
+    .job-new {
+      font-weight: 500;
+    }
 
     .job-more {
       float: right;
       font-size: 14px;
       color: rgba(31, 56, 88, 0.60);
       cursor: pointer;
-      text-decoration: none;
-
     }
   }
 
-  .content {
-    overflow: hidden;
+  .job-space {
+    position: relative;
     padding: 0 14px;
     line-height: 50px;
+    top: 0;
     color: rgba(0, 0, 0, 0.6);
 
-    .item {
+    .job-item {
       display: flex;
 
-      .item1 {
-        flex: 4;
+      .jobName {
+        flex: 3;
         color: #3c99d8;
-        cursor: pointer;
       }
 
-      .item2 {
+      .site {
         flex: 1;
       }
 
-      .item3 {
+      .time {
         flex: 1;
         text-align: right;
       }
