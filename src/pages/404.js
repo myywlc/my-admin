@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 
-export default class NoPath extends Component {
+export default class NoPath extends PureComponent {
   render() {
     return (
       <Fragment>

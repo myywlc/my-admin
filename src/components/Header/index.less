@@ -1,59 +1,84 @@
-@import "../../style/default";
+@bgc: #2c2f33;
 
-.header {
-  background-color: @colorM;
+.head {
+  height: 52px;
+  background-color: @bgc;
+  overflow: hidden;
 
-  .header-top {
-    height: 60px;
-    line-height: 60px;
-    padding: 0 20px;
-    text-align: right;
+  .container {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: PingFangSC-Regular;
 
-    a {
-      margin-left: 40px;
-    }
-  }
+    .head-menu {
+      width: 100%;
 
-  .breadcrumb {
-    height: 40px;
-    line-height: 40px;
-    padding: 0 20px;
-    border-top: 1px solid #f9c700;
-
-    .breadcrumb-title {
-      font-size: @fontC;
-      text-align: center;
-
-      &:after {
-        position: absolute;
-        content: '';
-        left: 83px;
-        top: 39px;
-        border-top: 9px solid @colorM;
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-      }
-    }
-
-    .weather {
-      text-align: right;
-      font-size: 14px;
-
-      .date {
-        margin-right: 10px;
-        vertical-align: middle;
+      .logo {
+        display: inline-block;
+        width: 125px;
       }
 
-      .weather-img {
-        img {
-          height: 15px;
+      .line {
+        display: inline-block;
+        color: white;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 52px;
+        margin: 0 10px;
+        opacity: 0.8;
+      }
+
+      .text {
+        color: white;
+        font-style: normal;
+        font-size: 14px;
+        opacity: 0.8;
+      }
+
+      .header_items {
+        text-align: right;
+      }
+
+      .header_item {
+        font-size: 14px;
+        color: #fff;
+        opacity: 0.8;
+        line-height: 52px;
+        padding: 10px 15px;
+        margin-left: 4px;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          color: #F37327
         }
+
       }
 
-      .weather-detail {
-        margin-left: 5px;
-        vertical-align: middle;
+      .login_box {
+        text-align: right;
+      }
+
+      .welcome {
+        font-size: 12px;
+        color: #fff;
+        opacity: 0.8;
+      }
+
+      .login_line {
+        color: #fff;
+        opacity: 0.8;
+      }
+
+      .login,
+      .register {
+        color: #fff;
+        opacity: 0.8;
+        // font-style: 12px;
       }
     }
   }
 }
+
+

@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import App from './App';
-import Login from './pages/login';
-import Admin from './admin';
-import Button from './pages/ui/button';
+import Login from './pages/Login';
+import BasicLayout from './layouts/BasicLayout';
+import Index from './pages/Index';
 import NoPath from './pages/404';
 
-export default class RouterComponent extends Component {
+export default class RouterComponent extends PureComponent {
   render() {
     return (
       <HashRouter>
-        <App>
+        <div>
           <Route path='/login' component={Login} />
-          <Route path='/admin' render={
+          <Route path='/zhaopin' render={
             () => (
-              <Admin>
+              <BasicLayout>
                 <Switch>
-                  <Route path='/admin/ui/buttons' component={Button} />
+                  <Route path='/zhaopin/index' component={Index} />
                   <Route component={NoPath} />
                 </Switch>
-              </Admin>
+              </BasicLayout>
             )
           } />
-        </App>
+        </div>
       </HashRouter>
     );
   }
