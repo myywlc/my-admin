@@ -7,15 +7,13 @@ import './BasicLayout.less';
 export default class BasicLayout extends PureComponent {
   render() {
     return (
-      <Row className='container'>
-        <Col className='main'>
-          <Header />
-          <Row className='content'>
-            {this.props.children}
-          </Row>
-          <Footer />
-        </Col>
-      </Row>
+      <div className='main'>
+        <Header />
+        <Row className='content'>
+          {this.props.children}
+        </Row>
+        <Footer />
+      </div>
     );
   }
 }

@@ -1,8 +1,23 @@
-@import "../../styles/default";
+@bgc: #2c2f33;
 
 .footer {
-  height: 100px;
-  padding: 40px 0;
-  text-align: center;
-  color: @colorJ;
+  height: 44px;
+  background-color: @bgc;
+  overflow: hidden;
+
+  .container {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: PingFangSC-Regular;
+
+    .footer-menu {
+      width: 100%;
+      text-align: center;
+      line-height: 44px;
+      font-size: 12px;
+      color: #fff;
+      opacity: .4;
+    }
+  }
 }
