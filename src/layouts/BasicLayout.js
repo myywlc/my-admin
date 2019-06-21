@@ -6,11 +6,11 @@ import './BasicLayout.less';
 export default class BasicLayout extends PureComponent {
   render() {
     return (
-      <div className='main'>
+      <div>
         <Header />
-        {/*<div className='content'>*/}
-          {/*{this.props.children}*/}
-        {/*</div>*/}
+        <div className='content'>
+          {this.props.children}
+        </div>
         <Footer />
       </div>
     );
