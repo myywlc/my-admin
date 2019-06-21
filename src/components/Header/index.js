@@ -11,7 +11,7 @@ export default class Head extends PureComponent {
       <div className='head'>
         <div className='container'>
           <div className='head-menu'>
-
+            阿里巴巴集团 Copyright ©1999-2019 版权所有
           </div>
         </div>
       </div>
