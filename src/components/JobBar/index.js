@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.less';
 
 class JobBar extends React.Component {
@@ -73,5 +74,11 @@ class JobBar extends React.Component {
     );
   }
 }
+
+
+JobBar.propTypes = {
+  dataList: PropTypes.array,
+};
+
 
 export default JobBar;
