@@ -29,7 +29,8 @@ export default class Header extends Component {
   getWeatherApiData = () => {
     let city = '杭州';
     axios.jsonp({
-      url: 'http://api.map.baidu.com/telematics/v3/weather?location=' + encodeURIComponent(city) + '&output=json&ak=3p49MVra6urFRGOT9s8UBWr2',
+      url: 'http://api.map.baidu.com/telematics/v3/weather?location='
+        + encodeURIComponent(city) + '&output=json&ak=3p49MVra6urFRGOT9s8UBWr2',
     }).then((res) => {
       if (res.status === 'success') {
         let data = res.results[0].weather_data[0];
@@ -59,11 +60,11 @@ export default class Header extends Component {
           <Col span={20} className={'weather'}>
             <span className={'date'}>{sysTime}</span>
             <span className={'weather-img'}>
-							<img src={dayPictureUrl} alt="" />
-						</span>
+              <img src={dayPictureUrl} alt="" />
+            </span>
             <span className={'weather-detail'}>
-							{weather}
-						</span>
+              {weather}
+            </span>
           </Col>
         </Row>
       </div>
