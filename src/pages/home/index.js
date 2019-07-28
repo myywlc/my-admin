@@ -33,8 +33,8 @@ export default class Home extends Component {
   render() {
     return (
       <div className={styles['home-wrap']}>
-        <div className={styles['box']}>
-          <div className={styles['title']}>
+        <div className={styles.box}>
+          <div className={styles.title}>
             <span>Debug</span>
           </div>
 
