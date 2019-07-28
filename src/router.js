@@ -4,6 +4,7 @@ import App from './App';
 import Login from './pages/login';
 import Admin from './admin';
 import Button from './pages/ui/button';
+import Home from './pages/home';
 import NoPath from './pages/404';
 
 export default class RouterComponent extends Component {
@@ -17,6 +18,7 @@ export default class RouterComponent extends Component {
               <Admin>
                 <Switch>
                   <Route path='/admin/ui/buttons' component={Button} />
+                  <Route path='/admin/ui/home' component={Home} />
                   <Route component={NoPath} />
                 </Switch>
               </Admin>
