@@ -7,23 +7,23 @@ const data = [
     value: 123456,
   },
   {
-    label: 'debugId',
+    label: 'debug',
     value: 123456,
   },
   {
-    label: 'debugId',
+    label: 'lin',
     value: 123456,
   },
   {
-    label: 'debugId',
+    label: 'bugId',
     value: 123456,
   },
   {
-    label: 'debugId',
+    label: 'Id',
     value: 123456,
   },
   {
-    label: 'debugId',
+    label: 'Id',
     value: 123456,
   },
 ];
