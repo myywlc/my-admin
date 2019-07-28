@@ -46,7 +46,7 @@ export default class Home extends Component {
                     <span>{item.label} : </span>
                     <span className={styles.key}>{item.value}</span>
                   </div>
-                )
+                );
               })
             }
           </div>
