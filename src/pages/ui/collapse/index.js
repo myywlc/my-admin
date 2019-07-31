@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import cx from 'classnames'
+import cx from 'classnames';
 import { Button, Icon } from 'antd';
 import styles from './index.module.less';
 
@@ -21,7 +21,8 @@ class Collapse extends PureComponent {
 
     return (
       <div className={styles.collapse}>
-        <div onClick={this.handleClick} className={cx({[styles.handle]: true, [styles.borderChange]: !open})}>
+        <div onClick={this.handleClick}
+             className={cx({ [styles.handle]: true, [styles.borderChange]: !open })}>
           {
             open ? (
               <Icon type="down" />
