@@ -17,9 +17,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: npm run build
       - run: npm ci
-      - run: npm build
+      - run: npm run build
       - name: deploy to server
         uses: easingthemes/ssh-deploy@v2.1.1
         env:
