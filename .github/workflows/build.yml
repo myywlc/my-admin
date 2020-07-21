@@ -20,7 +20,7 @@ jobs:
       - run: npm install -g yarn
       - run: yarn install
       - run: npm run build
-      - run: tar -czvf admin.tar.gz /admin
+      - run: tar -czvf admin.tar.gz ./admin
       - name: remove server mkdir
         uses: fifsky/ssh-action@master
         with:
