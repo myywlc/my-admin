@@ -17,7 +17,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm install
+      - run: npm install -g yarn
+      - run: yarn install
       - run: npm run build
       - name: remove server mkdir
         uses: fifsky/ssh-action@master
