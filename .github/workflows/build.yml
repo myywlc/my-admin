@@ -20,6 +20,7 @@ jobs:
       - run: npm install -g yarn
       - run: yarn install
       - run: npm run build
+      - run: tar -czvf admin.tar.gz /admin
       - name: remove server mkdir
         uses: fifsky/ssh-action@master
         with:
@@ -35,6 +36,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_KEY }}
           REMOTE_HOST: ${{ secrets.SERVER_HOST }}
           REMOTE_USER: "root"
-          SOURCE: "/admin"
+          SOURCE: "/admin.tar.gz"
           TARGET: "/root/app/frontend-resource"
-  
+
