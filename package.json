@@ -65,6 +65,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "postbuild": "mv build admin",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
