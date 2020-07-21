@@ -19,6 +19,15 @@ jobs:
           node-version: 12
       - run: npm install
       - run: npm run build
+      - name: remove server mkdir
+          uses: fifsky/ssh-action@master
+          with:
+            command: |
+              cd /root/app/frontend-resource
+              rm -rf ./admin
+            host: ${{ secrets.SERVER_HOST }}
+            user: root
+            key: ${{ secrets.SERVER_KEY }}
       - name: deploy to server
         uses: easingthemes/ssh-deploy@v2.1.1
         env:
@@ -27,5 +36,5 @@ jobs:
           REMOTE_USER: "root"
           ARGS: "-avzr --delete"
           SOURCE: "/admin"
-          TARGET: "/root/app/frontend-resource/admin"
+          TARGET: "/root/app/frontend-resource"
   
