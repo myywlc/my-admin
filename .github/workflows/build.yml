@@ -20,6 +20,7 @@ jobs:
       - run: npm install -g yarn
       - run: yarn install
       - run: npm run build
+      - run: tar -czvf admin.tar.gz ./admin
       - name: remove server mkdir
         uses: fifsky/ssh-action@master
         with:
@@ -30,10 +31,11 @@ jobs:
           user: root
           key: ${{ secrets.SERVER_KEY }}
       - name: deploy to server
-        uses: easingthemes/ssh-deploy@v2.1.1
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_KEY }}
-          REMOTE_HOST: ${{ secrets.SERVER_HOST }}
-          REMOTE_USER: "root"
-          SOURCE: "/admin"
-          TARGET: "/root/app/frontend-resource"
+        uses: appleboy/scp-action@master
+        with:
+          host: example.com
+          username: root
+          key: ${{ secrets.SERVER_KEY }}
+          port: 22
+          source: "admin.tar.gz"
+          target: "/root/app/frontend-resource"
