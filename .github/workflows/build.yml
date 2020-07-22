@@ -37,6 +37,7 @@ jobs:
           username: root
           key: ${{ secrets.SERVER_KEY }}
           port: 22
+          timeout: 60s
           source: "admin.tar.gz"
           target: "/root/app/frontend-resource"
       - name: remove server mkdir
