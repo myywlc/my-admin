@@ -39,3 +39,13 @@ jobs:
           port: 22
           source: "admin.tar.gz"
           target: "/root/app/frontend-resource"
+      - name: remove server mkdir
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd /root/app/frontend-resource
+            tar -zxvf ./admin.tar.gz
+            rm -rf ./admin.tar.gz
+          host: ${{ secrets.SERVER_HOST }}
+          user: root
+          key: ${{ secrets.SERVER_KEY }}
